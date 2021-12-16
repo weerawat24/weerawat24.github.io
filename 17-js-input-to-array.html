@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-js-input-to-array.html</title>
+    <script>
+        let std_name = []
+        let txt = ""
+        let n = 0
+        function input_name() {
+            txt += "<table border='1' style='border: 0ch;'" +
+                "<tr>" + "<th>" + "No." + "</th>" +
+                "<th>" + "Name" + "</th>" + "<th>" + "Edit" + "</th>" + "</tr>"
+            std_name.push(document.getElementById("fname").value)
+            console.log(std_name)
+            for (let i in std_name) {
+                n += 1
+                txt += "<tr>" + "<td>" + n + "</td>" + 
+                    "<td>" + std_name[i] + "</td>" + "<td>" 
+                    + "<button>Edit</button>" + "</td>" + "</tr>"
+            }
+            txt += "</table>"
+            console.log(txt)
+            document.getElementById("output").innerHTML = txt
+            txt = "" 
+            n = 0
+        }
+    </script>
+</head>
+<body>
+    กรุณาป้อนชื่อ : <input type="text" name="" id="fname">
+    <br>
+    <br>
+    <button onclick="input_name()">Submit</button>
+    <br>
+    <br>
+    <div id="output"></div>
+</body>
+</html>
